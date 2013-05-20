@@ -1,2 +1,2 @@
-Pract_2_Sudoku_Gnatyk
+﻿Pract_2_Sudoku_Gnatyk
 =====================
