@@ -1,13 +1,13 @@
-OBJ = main.c
+OBJ = main.o
 CFLAGS = -Wall -std=c99
 
 all: bin
 
 bin: $(OBJ)
-gcc $(CFLAGS) $(OBJ) -o bin
+	gcc $(CFLAGS) $(OBJ) -o bin
 
 %.o : %.c
-gcc $(CFLAGS) -c $<
+	gcc $(CFLAGS) -c $<
 
 clean:
-rm bin $(OBJ)
+	rm bin $(OBJ)

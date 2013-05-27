@@ -1,22 +1,20 @@
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 # define m 9
-    char Spis1[]="d:/input.txt";
-    char Spis2[]="d:/output.txt";
+   
     int ms[m][m];
+
 
 
     void clear_screen()
     {
-#ifdef _WIN32
+
         system("cls");
-#else
+
         system("clear");
-#endif
+
     }
 
     FILE *Open_file(char*file,char*code)
@@ -32,7 +30,7 @@ extern "C" {
     void displaySudoku(FILE * file)
     {
         int i, j;
-        file = fopen(Spis2, "w+");
+        file = fopen("output", "w+");
         for (i = 0; i < m; i++) {
             for (j = 0; j < m; j++) {
                 if (j == 2 || j == 5 || j == 8) {
@@ -59,8 +57,8 @@ extern "C" {
 
     int** peresap_bin_f(FILE* file)
     {
-        FILE *fb;
-        fb = Open_file(Spis1,"r+");
+        
+        file = Open_file("input","r+");
         int i,j;
         for (i = 0; i< m; i++)  {
             for(j = 0;j < m; j++) {
@@ -192,7 +190,7 @@ extern "C" {
         FILE *file;
         int koll;
         file = NULL;
-        file = Open_file(Spis1,"r");
+        file = Open_file("input","r");
         peresap_bin_f(file);
         koll = funct_sudoku(file,0,0);
         if (koll == 1) {
@@ -204,10 +202,3 @@ extern "C" {
         }          
         return 0;
     }
-
-
-
-#ifdef __cplusplus
-}
-#endif
-
